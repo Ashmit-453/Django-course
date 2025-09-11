@@ -3,8 +3,8 @@ from rest_framework.response import Response
 from collections import OrderedDict
 
 
-class ArticlePageNumberPagination(PageNumberPagination):
-    page_size = 10
+class CustomArticlePagination(PageNumberPagination):
+    page_size = 8
     page_size_query_param = 'page_size'
     max_page_size = 100
     

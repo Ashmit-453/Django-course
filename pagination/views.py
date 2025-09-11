@@ -3,12 +3,12 @@ from .serializers import ArticleSerializer
 from .models import Article
 from rest_framework.response import Response
 from django.core.paginator import EmptyPage, PageNotAnInteger
-from rest_framework.pagination import PageNumberPagination
+from .pagination import CustomArticlePagination
 
 class ArticleViewSet(viewsets.ReadOnlyModelViewSet):
 
     serializer_class = ArticleSerializer
-    pagination_class = PageNumberPagination
+    pagination_class = CustomArticlePagination
     
     def get_queryset(self):
         return Article.objects.filter(is_published=True).order_by('-created_at')
