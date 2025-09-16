@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'pagination',
     'rest_framework',
     'restaurant',
+    'notifications',
 ]
 
 
